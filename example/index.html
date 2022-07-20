@@ -1,0 +1,58 @@
+<html>
+
+<title>
+Simple Javscript Example To Convert Ticker, Date And Symbol To Options Ticker for API Consumption
+</title>
+
+<head>
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery-ui.js" type="text/javascript"></script>
+<script src="js/OptionsSymbolGenerator.js" type="text/javascript"></script>
+<link href="js/jquery-ui.css" rel="Stylesheet" type="text/css" />
+
+<h3>Simple Javscript Example To Convert Ticker, Date And Symbol To Options Ticker for API Consumption</h3>
+</head>
+
+<body>
+  <hr>
+  <p>Symbol: <input type="text" id="symbol" value="AAPL"></p>
+<p>Date: <input type="text" id="datepicker"></p>
+<p>Type: <select id="sType"><option selected value="C">CALL</option><option value="P">PUT</option></select></p>
+<p>Strike: <input type="text" id="strike" ></p>
+
+<br>
+
+<button onclick="generateSym()">Get Ticker</button>
+
+
+<br><hr><br>
+<div id="resultsContainter">
+
+<div id="results1">
+
+</div>
+
+</div>
+</body>
+
+<script>
+$("#datepicker").datepicker({
+    beforeShowDay: function(date) {
+        return [date.getDay() == 5];
+    }
+});
+
+function generateSym(){
+  var symbol = $("#symbol").val()
+  var date = $("#datepicker").val()
+  var strike = $('#strike').val()
+  var type = $('#sType').val();
+  var result = genOptionsSymbol(symbol, date, type, strike)
+  $('#results1').html(result);
+}
+
+
+
+</script>
+
+</html>
