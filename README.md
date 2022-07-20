@@ -2,7 +2,7 @@
 # Simple Javscript Example To Convert Ticker, Date And Symbol To Options Ticker for API Consumption
 
 You can view and example here:
-[Example HTML/JS](/example)
+[Example HTML/JS](https://www.givingdesk.org/options/symbol)
 
 Simply pass the ticker, date (MM/DD/YYYY format), type (CALL or PUT) and strike price to the `genOptionsSymbol` function.
 
